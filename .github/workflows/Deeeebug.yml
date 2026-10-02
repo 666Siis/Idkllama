@@ -64,8 +64,28 @@ jobs:
 
           xcodebuild \
 
-            -project Idkllama.xcodeproj \
+            -project LlamaIOS.xcodeproj \
 
-            -scheme Idkllama \
+            -scheme LlamaIOS \
 
             -resolvePackageDependencies
+
+      - name: Build
+
+        run: |
+
+          xcodebuild \
+
+            -project LlamaIOS.xcodeproj \
+
+            -scheme LlamaIOS \
+
+            -configuration Release \
+
+            -sdk iphoneos \
+
+            CODE_SIGNING_ALLOWED=NO \
+
+            CODE_SIGNING_REQUIRED=NO \
+
+            build
