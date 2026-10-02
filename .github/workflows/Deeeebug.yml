@@ -1,0 +1,9 @@
+- name: Check Xcode and Swift
+
+  run: |
+
+    xcode-select -p
+
+    xcodebuild -version
+
+    swift --version
