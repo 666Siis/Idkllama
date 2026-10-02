@@ -1,4 +1,4 @@
-name: Xcode Debug
+name: Deeeebug
 
 on:
 
@@ -12,7 +12,17 @@ jobs:
 
     steps:
 
-      - name: Check Xcode
+      - name: Checkout
+
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 16.4
+
+        run: |
+
+          sudo xcode-select -s /Applications/Xcode_16.4.app/Contents/Developer
+
+      - name: Check Xcode and Swift
 
         run: |
 
@@ -27,3 +37,35 @@ jobs:
           echo "=== Swift ==="
 
           swift --version
+
+      - name: Install XcodeGen
+
+        run: |
+
+          brew install xcodegen
+
+      - name: Show Project Spec
+
+        run: |
+
+          echo "=== project.yml ==="
+
+          cat project.yml
+
+      - name: Generate Xcode Project
+
+        run: |
+
+          xcodegen generate
+
+      - name: Resolve Package Graph
+
+        run: |
+
+          xcodebuild \
+
+            -project Idkllama.xcodeproj \
+
+            -scheme Idkllama \
+
+            -resolvePackageDependencies
