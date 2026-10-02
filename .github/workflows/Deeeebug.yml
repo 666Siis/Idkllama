@@ -1,9 +1,29 @@
+name: Xcode Debug
 
+on:
 
-  run: |
+  workflow_dispatch:
 
-    xcode-select -p
+jobs:
 
-    xcodebuild -version
+  debug:
 
-    swift --version
+    runs-on: macos-15
+
+    steps:
+
+      - name: Check Xcode
+
+        run: |
+
+          echo "=== xcode-select ==="
+
+          xcode-select -p
+
+          echo "=== Xcode ==="
+
+          xcodebuild -version
+
+          echo "=== Swift ==="
+
+          swift --version
