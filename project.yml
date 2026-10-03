@@ -14,7 +14,7 @@ packages:
 
 settings:
   base:
-    SWIFT_VERSION: "6.0"
+    SWIFT_VERSION: "5.9"
     DEVELOPMENT_TEAM: ""
 
 targets:
