@@ -27,7 +27,6 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.llama-ios
         INFOPLIST_FILE: LlamaIOS/Supporting/Info.plist
         TARGETED_DEVICE_FAMILY: "1,2"
-
         CODE_SIGN_STYLE: Manual
         CODE_SIGNING_ALLOWED: NO
         CODE_SIGNING_REQUIRED: NO
